@@ -57,7 +57,7 @@ class GeneralInfo extends Component {
                             <label className="form-label" htmlFor="phone" > Phone number: </label>
                             <input type="phone" name="phone" pattern="[0-9]{9}" onChange={this.handleChange} value={this.state.phone} required/>
                             <br/><br/>
-                            <button type="submit" > Submit </button>
+                            <button type="submit" > <i className="fa fa-plus"></i> </button>
                         </form>
                     </div>
                 ) : (
@@ -71,7 +71,7 @@ class GeneralInfo extends Component {
                         <br/>
                         <span> Phone number: </span> <strong>{this.state.phone}</strong>
                         <br/><br/>
-                        <button onClick={this.toggle}> Edit </button>
+                        <button onClick={this.toggle}> <i className="fa fa-edit"></i> </button>
                     </div>
                     
                     
