@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import GeneralInfo from "./Components/GeneralInfo";
 import EducationInfo from "./Components/EducationInfo";
+import "./styles/App.css";
 
 class App extends Component {
   constructor() {
@@ -11,10 +12,12 @@ class App extends Component {
  
   render() {
     return (
-      <div>
+      <div id="container">
+      <div id="grid">
         <GeneralInfo></GeneralInfo>
 
         <EducationInfo></EducationInfo>
+      </div>
       </div>
     );
   }

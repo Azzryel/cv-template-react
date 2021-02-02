@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../styles/GeneralInfo.css";
 
 class GeneralInfo extends Component {
     constructor() {
@@ -41,7 +42,7 @@ class GeneralInfo extends Component {
 
     render() {
         return (
-            <div>
+            <div className="grid-item item1">
                 {!this.state.toggleEdit ? (
                     <div>
                         <form onSubmit={this.submitForm}>
