@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import GeneralInfo from "./Components/GeneralInfo";
 
 class App extends Component {
   constructor() {
@@ -9,7 +10,9 @@ class App extends Component {
  
   render() {
     return (
-      <p> Hi </p>
+      <div>
+        <GeneralInfo></GeneralInfo>
+      </div>
     );
   }
 }
