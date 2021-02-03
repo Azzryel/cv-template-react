@@ -4,15 +4,18 @@
 
 #grid {
     display: grid;
+    column-gap: 0;
     border: 1px solid black;
 }
 
 .grid-item {
     width: 500px;
-    height: 250px;
+    min-height: 250px;
+ 
 }
 
 .form-label {
+    display: inline-block;
     border: 1px solid aqua;
 }
 
@@ -29,3 +32,8 @@ button:hover {
     background-color: royalblue;
     color: yellow;
 }
+
+.item3 {
+    border: 1px solid green
+}
+

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import GeneralInfo from "./Components/GeneralInfo";
 import EducationInfo from "./Components/EducationInfo";
+import { PracticalExp } from "./Components/PracticalExp";
 import "./styles/App.css";
 
 class App extends Component {
@@ -17,6 +18,8 @@ class App extends Component {
         <GeneralInfo></GeneralInfo>
 
         <EducationInfo></EducationInfo>
+        
+        <PracticalExp></PracticalExp>
       </div>
       </div>
     );
