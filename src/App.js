@@ -6,10 +6,6 @@ import "./styles/reset.css";
 import "./styles/App.css";
 
 class App extends Component {
-  constructor() {
-    super();
-
-  }
 
  
   render() {

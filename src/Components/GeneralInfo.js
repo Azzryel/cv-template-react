@@ -44,7 +44,7 @@ class GeneralInfo extends Component {
         return (
             <div className="grid-item item1">
                 {!this.state.toggleEdit ? (
-                    <div>
+                    <div className="general">
                         <form onSubmit={this.submitForm}>
                             <label className="form-label" htmlFor="name"  > Name: </label>
                             <input type="text" name="name" onChange={this.handleChange} value={this.state.name} required/>
@@ -58,21 +58,22 @@ class GeneralInfo extends Component {
                             <label className="form-label" htmlFor="phone" > Phone number: </label>
                             <input type="phone" name="phone" pattern="[0-9]{9}" onChange={this.handleChange} value={this.state.phone} required/>
                             <br/><br/>
-                            <button type="submit" > <i className="fa fa-plus"></i> </button>
+                            <button className="button" type="submit" > <i className="fa fa-plus"></i> </button>
                         </form>
                     </div>
                 ) : (
 
-                    <div>
-                        <span> Name: </span> <strong>{this.state.name}</strong>
+                    <div className="general">
                         <br/>
-                        <span> Surname: </span> <strong>{this.state.surname}</strong>
-                        <br/>
-                        <span> e-mail: </span> <strong>{this.state.email}</strong>
-                        <br/>
-                        <span> Phone number: </span> <strong>{this.state.phone}</strong>
+                        <span> Name: </span> <span className="info">{this.state.name}</span>
                         <br/><br/>
-                        <button onClick={this.toggle}> <i className="fa fa-edit"></i> </button>
+                        <span> Surname: </span> <span className="info">{this.state.surname}</span>
+                        <br/><br/>
+                        <span> e-mail: </span> <span className="info">{this.state.email}</span>
+                        <br/><br/>
+                        <span> Phone number: </span> <span className="info">{this.state.phone}</span>
+                        <br/><br/><br/>
+                        <button className="button" onClick={this.toggle}> <i className="fa fa-edit"></i> </button>
                     </div>
                     
                     

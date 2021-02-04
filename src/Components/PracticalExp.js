@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../styles/PracticalExp.css";
 
 class PracticalExp extends Component {
     constructor() {
@@ -26,13 +27,13 @@ class PracticalExp extends Component {
     toggleAdd() {
         this.setState({
         addMore: this.state.addMore ? false : true,
-        icon: (this.state.icon == "fa fa-plus-square") ? "fa fa-window-close" : "fa fa-plus-square",
+        icon: (this.state.icon === "fa fa-plus-square") ? "fa fa-window-close" : "fa fa-plus-square",
         })
         this.clearForm();
     }
 
     clearForm() {
-        if(this.state.icon == "fa fa-plus-square") {
+        if(this.state.icon === "fa fa-plus-square") {
             this.setState({
                 company: {
                     name: "",
@@ -72,10 +73,10 @@ class PracticalExp extends Component {
         const isEmpty = this.state.jobs.length;
 
         return (
-            <div className ="grid-item item3" >
-                <h5>Work Exp</h5> <button onClick={this.toggleAdd} > <i className={this.state.icon}></i> </button>
+            <div className ="grid-item item3" > <h5 className="title">Work Exp</h5>
+                 <button className="addBtn" onClick={this.toggleAdd} > <i className={this.state.icon}></i> </button>
                 {this.state.addMore ? ( 
-                    <div>
+                    <div className="practical">
                         <form onSubmit={this.submitForm}>
                             <label className="form-label" htmlFor="name">Company name:</label>
                             <input type="text" name="name" onChange={this.handleChange} value={this.state.company.name} required/>
@@ -112,35 +113,34 @@ class PracticalExp extends Component {
 
 
 class CompanyCard extends Component {
-    constructor(props) {
-        super(props);
 
-    }
 
     render() {
         const companies = this.props.jobs;
         
         return (
-            <div className="company-container"> 
+            <div className="company-container practicsl"> 
                 {companies.map(company => {
                     return (
                         <div key={companies.indexOf(company)} className="company-card">
-                            <span>Company:</span> <span> {company.name} </span>   
-                            <br/>
-                            <span>Job position:</span> <span> {company.position} </span>   
-                            <br/>
-                            <span>Job description:</span> <p> {company.jobDescr} </p>   
-                            <br/>
+                            <span>Company:</span> <span className="card-display"> {company.name} </span>   
+                            <br/><br/>
+                            <span>Job position:</span> <span className="card-display"> {company.position} </span>   
+                            <br/><br/>
+                            <span>Job description:</span> <p className="card-display description"> {company.jobDescr} </p>   
+                            <br/><br/>
+                            <br/><br/>
+                            <br/><br/>
                             {!!(Boolean(company.dateFrom)) ? (
                                 <p>
-                                    <span>Started:</span> <span> {company.dateFrom} </span>
+                                    <span>Started:</span> <span className="card-display"> {company.dateFrom} </span>
                                 </p>
                             ) : (
-                                <span className="none">  </span>
+                                <span className="none">  </span >
                             ) }
                             {!!(Boolean(company.dateUntil)) ? (
                                 <p>
-                                    <span>Until:</span> <span> {company.dateUntil} </span>
+                                    <span>Until:</span> <span className="card-display"> {company.dateUntil} </span>
                                 </p>
                             ) : (
                                 <span className="none">  </span>

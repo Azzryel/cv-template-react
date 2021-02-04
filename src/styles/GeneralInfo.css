@@ -1,6 +1,28 @@
 .item1 {
     grid-column: 1;
     grid-row:1 / span 3;
-    border: 1px solid red;
+    border-right: 1px solid black;
+    background-color: lightgoldenrodyellow;
     height: 100%;
+}
+
+.general {
+    position: sticky;
+    margin-top: 50px;
+    padding-left: 20px;
+    height: 200px;
+
+}
+
+.info {
+    position: absolute;
+    left: 170px;
+    font-size: large;
+    font-weight: bold;
+}
+
+.button {
+    position: absolute;
+    bottom: 5px;
+    right: 20px;
 }

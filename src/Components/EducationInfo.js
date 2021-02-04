@@ -42,36 +42,36 @@ class EducationInfo extends Component {
 
     render() {
         return (
-            <div className="grid-item item2">
+            <div className="grid-item item2"> <h5 className="title"> Education </h5>
                 {!this.state.toggleEdit ? (
-                    <div>
+                    <div className="education">
                         <form onSubmit={this.submitForm}>
                             <label className="form-label" htmlFor="school"> School: </label>
-                            <input type="text" name="school" onChange={this.handleChange} value={this.state.school}/>
+                            <input type="text" name="school" onChange={this.handleChange} value={this.state.school} required/>
                             <br/>
                             <label className="form-label" htmlFor="degree"> Degree: </label>
-                            <input type="text" name="degree" onChange={this.handleChange} value={this.state.degree} />
+                            <input type="text" name="degree" onChange={this.handleChange} value={this.state.degree} required/>
                             <br/>
                             <label className="form-label" htmlFor="enrolled"> Date enrolled: </label>
-                            <input type="date" name="enrolled" onChange={this.handleChange} value={this.state.enrolled} /> 
+                            <input type="date" name="enrolled" onChange={this.handleChange} value={this.state.enrolled} required/> 
                             <br/>
                             <label className="form-label" htmlFor="graduated"> Date graduated: </label>
-                            <input type="date" name="graduated" onChange={this.handleChange} value={this.state.graduated} /> 
+                            <input type="date" name="graduated" onChange={this.handleChange} value={this.state.graduated} required/> 
                             <br/><br/>
-                            <button type="submit" > <i className="fa fa-plus"></i> </button>
+                            <button className="button" type="submit" > <i className="fa fa-plus"></i> </button>
                         </form>
                     </div>
                 ) : (
-                    <div>
-                    
+                    <div className="education">
+                        <br/>
                         <span> School: </span> <strong>{this.state.school}</strong>
-                        <br/>
-                        <span> Degree: </span> <strong>{this.state.degree}</strong>
-                        <br/>
-                        <span> Date: </span> <span>{this.state.enrolled}</span>
-                        <span>  -  </span> <span>{this.state.graduated}</span>
                         <br/><br/>
-                        <button onClick={this.toggle}> <i className="fa fa-edit"></i> </button>
+                        <span> Degree: </span> <strong>{this.state.degree}</strong>
+                        <br/><br/>
+                        <span> Date: </span> <span className="date">{this.state.enrolled}</span>
+                        <br/>                <span className="date">{this.state.graduated}</span>
+                        <br/><br/><br/>
+                        <button className="button" onClick={this.toggle}> <i className="fa fa-edit"></i> </button>
                     
                     </div>
                 )
